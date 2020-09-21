@@ -1,10 +1,13 @@
-FROM elementary/docker
+FROM ubuntu:20.04
+
+ENV TZ=Europe/Oslo
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 RUN apt-get update && \
       apt-get -y install sudo
 
 RUN useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
-RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+RUN printf '\ndocker ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 USER docker
 CMD /bin/bash

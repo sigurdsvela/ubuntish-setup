@@ -1,6 +1,6 @@
 # Essentials
 
-echo "$USER ALL=(ALL) NOPASSWD:ALL" | sudo tee -a /etc/sudoers
+# printf "\n\n\n$USER ALL=(ALL) NOPASSWD:ALL\n" | sudo tee -a /etc/sudoers
 
 ## --- pip3 git add-apt-repository
 echo "Installing basics"
@@ -48,9 +48,8 @@ printf "\nexport PATH=\$PATH:/snap/bin\n"
 echo "Installing Dropbox"
 sudo apt install ./dist/dropbox.deb -y
 
-## Lets do the rest of this in Python, cause I hatee bash
-sudo -H pip3 install pyyaml > /dev/null
-sudo -H python3 ./apt-installer.py
+## Install apts
+./apt-installer/install.sh ./apt
 
 
 ssh-keygen

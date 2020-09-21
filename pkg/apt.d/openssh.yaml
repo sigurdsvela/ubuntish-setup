@@ -1,4 +1,0 @@
-label: 'Open SSH'
-packages:
-  - openssh-server
-  - openssh-client

@@ -4,3 +4,6 @@
 [submodule "keyboard"]
 	path = keyboard
 	url = git@github.com:sigurdsvela/ubuntulike-no-mac-keyboard-stetup.git
+[submodule "apt-installer"]
+	path = apt-installer
+	url = git@github.com:sigurdsvela/apt-installer.git

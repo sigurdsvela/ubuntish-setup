@@ -1,8 +1,0 @@
-label: Nvidia Drivers
-repo: ppa:graphics-drivers/ppa
-packages:
-    - nvidia-driver-440
-    - libnvidia-gl-440
-    - libnvidia-gl-440:i386
-    - libvulkan1
-    - libvulkan1:i386
