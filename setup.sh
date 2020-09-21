@@ -10,15 +10,15 @@ sudo apt install git -y &> /dev/null
 git config --global user.email "sigurdbergsvela@gmail.com"
 git config --global user.name "Sigurd Berg Svela"
 
-# echo "- apt-utils"
-# sudo apt install apt-utils -y &> /dev/null
-# echo "- python3"
-# sudo apt install python3-pip -y &> /dev/null
-# echo "- software-properties-common"
-# sudo apt install software-properties-common -y &> /dev/null
-# echo "- vim"
-# sudo apt install vim -y &> /dev/null
-## --- Add 32bit
+echo "- apt-utils"
+sudo apt install apt-utils -y &> /dev/null
+echo "- python3"
+sudo apt install python3-pip -y &> /dev/null
+echo "- software-properties-common"
+sudo apt install software-properties-common -y &> /dev/null
+echo "- vim"
+sudo apt install vim -y &> /dev/null
+# --- Add 32bit
 sudo dpkg --add-architecture i386
 
 echo "Dotfile Setup"
@@ -46,7 +46,9 @@ printf "\nexport PATH=\$PATH:/snap/bin\n"
 
 ## ---- Dropbox
 echo "Installing Dropbox"
-sudo apt install ./dist/dropbox.deb -y &> /dev/null
+if ! command -v COMMAND &> /dev/null; then
+	sudo apt install ./dist/dropbox.deb -y &> /dev/null
+fi
 
 ## Install apts
 ./apt-installer/install.sh ./apt
