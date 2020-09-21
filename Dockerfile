@@ -13,7 +13,11 @@ USER docker
 CMD /bin/bash
 
 # Install to make the setupscrip faster
-RUN sudo apt install git python3-pip software-properties-common snap -y
+RUN sudo apt install git python3-pip software-properties-common snapd vim -y
+
+# - Sensors
+RUN sudo apt install lm-sensors -y
+RUN sudo apt install inxi -y
 
 RUN pip3 install pyyaml
 
