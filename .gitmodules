@@ -1,0 +1,3 @@
+[submodule "sensors"]
+	path = sensors
+	url = git@github.com:sigurdsvela/it87-sensors.git
