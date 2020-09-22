@@ -21,5 +21,5 @@ RUN sudo apt install inxi -y
 
 RUN pip3 install pyyaml
 
-COPY . /home/docker/eos_setup
-WORKDIR /home/docker/eos_setup
+COPY . /home/docker/.setup
+WORKDIR /home/docker/.setup
