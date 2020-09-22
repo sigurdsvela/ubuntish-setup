@@ -12,14 +12,14 @@ DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
 if [ ! -d ~/.ssh ]; then
   mkdir ~/.ssh;
 fi
-for f in $DIR/.ssh/*; do ln -s $DIR/.ssh/$f ~/.ssh/$(basename $f); done
+for f in $DIR/.ssh/*; do ln -fs $DIR/.ssh/$f ~/.ssh/$(basename $f); done
 
 ## -- XKB.d -- ##
-ln -s $DIR/.xkb ~/.xkb
+ln -fs $DIR/.xkb ~/.xkb
 
 ## -- PROFILE.D -- ##
 # Run all .profile.d .sh files on .bashrc
 printf "\n\nfor f in ~/.profile.d/*.sh; do source \"\$f\"; done \n" >> ~/.bashrc
-ln -s $DIR/.profile.d ~/.profile.d
+ln -fs $DIR/.profile.d ~/.profile.d
 source ~/.bashrc
 
